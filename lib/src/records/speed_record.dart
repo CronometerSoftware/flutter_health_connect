@@ -26,7 +26,7 @@ class SpeedRecord extends SeriesRecord<SpeedSample> {
     required this.samples,
     metadata,
   })  : metadata = metadata ?? Metadata.empty(),
-        assert(startTime.isBefore(endTime),
+        assert(!startTime.isAfter(endTime),
             "startTime must not be after endTime.");
 
   @override

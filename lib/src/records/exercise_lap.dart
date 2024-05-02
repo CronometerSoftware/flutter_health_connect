@@ -9,7 +9,7 @@ class ExerciseLap {
     required this.startTime,
     required this.endTime,
     this.length,
-  })  : assert(startTime.isBefore(endTime),
+  })  : assert(!startTime.isAfter(endTime),
             "startTime must not be after endTime."),
         assert(
             length == null ||

@@ -24,7 +24,7 @@ class CyclingPedalingCadenceRecord extends SeriesRecord<Sample> {
     this.startZoneOffset,
     required this.samples,
   })  : metadata = metadata ?? Metadata.empty(),
-        assert(startTime.isBefore(endTime),
+        assert(!startTime.isAfter(endTime),
             "startTime must not be after endTime.");
 
   @override

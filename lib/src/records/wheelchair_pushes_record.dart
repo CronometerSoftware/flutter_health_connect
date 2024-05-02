@@ -23,7 +23,7 @@ class WheelchairPushesRecord extends IntervalRecord {
     this.startZoneOffset,
     required this.count,
   })  : metadata = metadata ?? Metadata.empty(),
-        assert(startTime.isBefore(endTime),
+        assert(!startTime.isAfter(endTime),
             "startTime must not be after endTime."),
         assert(count >= _minCount && count <= _maxCount);
 

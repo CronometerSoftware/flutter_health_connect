@@ -24,7 +24,7 @@ class HeartRateRecord extends SeriesRecord<HeartRateSample> {
     required this.startTime,
     this.startZoneOffset,
   })  : metadata = metadata ?? Metadata.empty(),
-        assert(startTime.isBefore(endTime),
+        assert(!startTime.isAfter(endTime),
             "startTime must not be after endTime.");
 
   @override

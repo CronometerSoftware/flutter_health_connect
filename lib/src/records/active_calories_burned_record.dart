@@ -26,7 +26,7 @@ class ActiveCaloriesBurnedRecord extends IntervalRecord {
       metadata})
       : assert(energy.value >= 0, 'Energy must be positive'),
         assert(
-            startTime.isBefore(endTime), 'Start time must be before end time'),
+            !startTime.isAfter(endTime), 'Start time must be before end time'),
         assert(energy.value <= maxEnergy.value,
             'Energy must be less than $maxEnergy'),
         metadata = metadata ?? Metadata.empty();

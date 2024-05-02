@@ -39,7 +39,7 @@ class ExerciseSessionRecord extends IntervalRecord {
     ExerciseRoute? route,
   })  : metadata = metadata ?? Metadata.empty(),
         exerciseRouteResult = route != null ? Data(route) : NoData() {
-    assert(startTime.isBefore(endTime), "startTime must not be after endTime.");
+    assert(!startTime.isAfter(endTime), "startTime must not be after endTime.");
     if (segments.isNotEmpty) {
       var sortedSegments = segments
         ..sort((a, b) => a.startTime.compareTo(b.startTime));

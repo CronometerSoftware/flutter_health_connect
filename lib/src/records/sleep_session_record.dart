@@ -28,7 +28,7 @@ class SleepSessionRecord extends IntervalRecord {
     this.notes,
     this.stages = const [],
   })  : metadata = metadata ?? Metadata.empty(),
-        assert(startTime.isBefore(endTime)) {
+        assert(!startTime.isAfter(endTime)) {
     if (stages.isNotEmpty) {
       List<SleepStage> sortedStages = stages
         ..sort((a, b) => a.startTime.compareTo(b.startTime));
@@ -113,7 +113,7 @@ class SleepStage {
     required this.startTime,
     required this.endTime,
     required this.stage,
-  }) : assert(startTime.isBefore(endTime));
+  }) : assert(!startTime.isAfter(endTime));
 
   @override
   bool operator ==(Object other) =>

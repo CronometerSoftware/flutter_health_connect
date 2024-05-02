@@ -113,7 +113,7 @@ class NutritionRecord extends IntervalRecord {
     this.name,
     this.mealType = MealType.unknown,
   })  : metadata = metadata ?? Metadata.empty(),
-        assert(startTime.isBefore(endTime),
+        assert(!startTime.isAfter(endTime),
             "startTime must not be after endTime."),
         assert(
             biotin == null ||

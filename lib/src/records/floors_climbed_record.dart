@@ -23,7 +23,7 @@ class FloorsClimbedRecord extends IntervalRecord {
     this.startZoneOffset,
     required this.floors,
   })  : metadata = metadata ?? Metadata.empty(),
-        assert(startTime.isBefore(endTime),
+        assert(!startTime.isAfter(endTime),
             "startTime must not be after endTime."),
         assert(floors >= _minFloors && floors <= _maxFloors);
 

@@ -648,7 +648,7 @@ class FlutterHealthConnectPlugin(private var channel: MethodChannel? = null) : F
                             sodium = if (recordMap["sodium"] != null) Mass.grams(recordMap["sodium"] as Double) else null,
                             sugar = if (recordMap["sugar"] != null) Mass.grams(recordMap["sugar"] as Double) else null,
                             thiamin = if (recordMap["thiamin"] != null) Mass.grams(recordMap["thiamin"] as Double) else null,
-                            totalCarbohydrate = if (recordMap["totalCarbohydrate"] != null) Mass.grams(recordMap["totalCarbohydrate"] as Double) else null,
+                            totalCarbohydrate = if (recordMap["totalCarbohydrates"] != null) Mass.grams(recordMap["totalCarbohydrates"] as Double) else null,
                             totalFat = if (recordMap["totalFat"] != null) Mass.grams(recordMap["totalFat"] as Double) else null,
                             transFat = if (recordMap["transFat"] != null) Mass.grams(recordMap["transFat"] as Double) else null,
                             unsaturatedFat = if (recordMap["unsaturatedFat"] != null) Mass.grams(recordMap["unsaturatedFat"] as Double) else null,
